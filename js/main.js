@@ -95,7 +95,7 @@ var annotation1980 = [{
 	  label: "Click this annotation to skip over the quiet years",
 	  wrap: 250
 	},
-	subject: { radius: 20 },
+	subject: { radius: 15 },
 	x: x(1), y: y(7.07), dy: -20, dx: 20
 }];
 
@@ -106,7 +106,7 @@ var annotation1992 = [{
 	  label: "Video game popularity begin to take form as more publishers enter the industry and more profit globally is being made.",
 	  wrap: 250
 	},
-	subject: { radius: 20 },
+	subject: { radius: 15 },
 	x: x(5), y: y(15.25), dy: -20, dx: 20
 }];
 
@@ -117,7 +117,7 @@ var annotation2002 = [{
 	  label: "In this year genres begin to stand out from each other. Some performed very well like Shooter, Action, and Racing. Others were not too popular like Role-Playing, Strategy, and Platform.",
 	  wrap: 250
 	},
-	subject: { radius: 20 },
+	subject: { radius: 15 },
 	x: x(35), y: y(86.77), dy: -20, dx: 20
 }];
 
@@ -128,7 +128,7 @@ var annotation2006 = [{
 	  label: "With global sales (millions) at $136.16 and 22 publishers, Action game sales skyrocketed.",
 	  wrap: 250
 	},
-	subject: { radius: 20 },
+	subject: { radius: 15 },
 	x: x(22), y: y(136.16), dy: 20, dx: 20
 }];
 
@@ -139,7 +139,7 @@ var annotation2008 = [{
 	  label: "With global sales (millions) at $136.39 and 43 publishers, this genre begins its dominance for years to come.",
 	  wrap: 250
 	},
-	subject: { radius: 20 }, 
+	subject: { radius: 15 }, 
 	x: x(43), y: y(136.39), dy: 20, dx: 20
 }];
 
@@ -150,7 +150,7 @@ var annotation2012 = [{
 		label: "While all genres take a hit in this year as global sales and participating publishers decline, Shooter games continue their success.",
 		wrap: 250
 	},
-	subject: { radius: 20 }, 
+	subject: { radius: 15 }, 
 	x: x(59), y: y(122.04), dy: 20, dx: -50
 }];
 
@@ -161,7 +161,7 @@ var annotation2013 = [{
 		label: "But the next year many publishers dropped out of the Shooter genre.",
 		wrap: 250
 	},
-	subject: { radius: 20 }, 
+	subject: { radius: 15 }, 
 	x: x(30), y: y(125.22), dy: 20, dx: -50
 }];
 
@@ -172,7 +172,7 @@ var annotation2015 = [{
 	  label: "Going forward it seems that game genres are pulling back further with number of publishers and global sales, but Shooter games continue to be profitable with global sales (millions) at $70.70 and number of publishers at 47.",
 	  wrap: 250
 	},
-	subject: { radius: 20}, 
+	subject: { radius: 15 }, 
 	x: x(47), y: y(70.70), dy: -20, dx: -50
 }];
 
@@ -304,7 +304,7 @@ function update(data) {
 			.attr("fill", function(d, i) { 
 				return genreColor(i);
 			})
-			.attr("r", 15)
+			.attr("r", 10)
 			.on("mouseover", function(d, i) {
 				tooltip.transition()
 					.duration(200)
