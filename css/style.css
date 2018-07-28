@@ -53,6 +53,58 @@ TITLE BAR
 	text-align: left;
 }
 
+@media (max-width: 996px) {
+	.control_button,
+	.title_button {
+		margin: 0.5rem auto;
+	}
+}
+
+
+/* 
+==================================================
+BUTTON CONTROL
+==================================================
+*/
+
+#about {
+	background-color: #7A568E;
+	transition: 0.3s;
+	opacity: 0.3;
+}
+
+#about:hover {
+	transition: 0.3s;
+	opacity: 1;
+}
+
+#reset,
+#back {
+	background-color: #9F555C;
+	transition: 0.3s; 
+	opacity: 0.3;
+}
+
+#reset:hover,
+#back:hover {
+	transition: 0.3s; 
+	opacity: 1;
+}
+
+#run,
+#forward {
+	background-color: #6C8F59;
+	transition: 0.3s; 
+	opacity: 0.3;
+}
+
+#run:hover,
+#forward:hover {
+	transition: 0.3s;
+	opacity: 1;
+}
+
+
 /* 
 ==================================================
 VISUALIZATION

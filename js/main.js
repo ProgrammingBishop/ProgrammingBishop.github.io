@@ -384,6 +384,9 @@ d3.csv("./data/output.csv").then(function(data) {
 				update(df[String(year + tick)]);
 				tick += 1; 
 				
+				if ( d3.select("g.make1992").attr("display") == "block") {
+					d3.select("g.make1992").attr("display", "none");
+				}
 
 				if ( tick >= (2016 - 1980) ) {
 					tick -= 1;
