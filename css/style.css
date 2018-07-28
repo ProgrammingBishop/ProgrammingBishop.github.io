@@ -45,9 +45,9 @@ TITLE BAR
 .control_button:hover span {
     display: block;
     z-index: 100;
-    left: 0%;
+    left: 60%;
     position: absolute;
-    top: 4rem;
+    top: 0rem;
 	text-decoration: none;
 	transition: 0.3s;
 	text-align: left;
@@ -74,6 +74,10 @@ VISUALIZATION
 	   -moz-border-radius: 1rem;
 			border-radius: 1rem;
 	font-size: 1.25rem;
+}
+
+.control_button:hover span {
+	padding: 1rem;
 }
 
 .enter:hover {
