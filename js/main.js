@@ -33,6 +33,10 @@ var y = d3.scaleLinear()
 	.range([height, 0])
 	.domain([0, 140]);
 
+var area = d3.scaleLinear()
+    .range([25 * Math.PI, 1000 * Math.PI])
+    .domain([0, 140]);
+
 
 // Setup Axis
 var xAxisCall = d3.axisBottom(x)
@@ -91,7 +95,7 @@ var tooltip = d3.select("#visualization")
 var annotation1980 = [{
 	type: d3.annotationCalloutCircle,
 	note: {
-	  title: "Not until 1992 when publishers emerged and profit was made.",
+	  title: "It isn't until 1992 when publishers emerged and profit was made.",
 	  label: "Click this annotation to skip over the quiet years",
 	  wrap: 250
 	},
@@ -106,7 +110,7 @@ var annotation1992 = [{
 	  label: "Video game popularity begin to take form as more publishers enter the industry and more profit globally is being made.",
 	  wrap: 250
 	},
-	subject: { radius: 15 },
+	subject: { radius: 20 },
 	x: x(5), y: y(15.25), dy: -20, dx: 20
 }];
 
@@ -117,8 +121,8 @@ var annotation2002 = [{
 	  label: "In this year genres begin to stand out from each other. Some performed very well like Shooter, Action, and Racing. Others were not too popular like Role-Playing, Strategy, and Platform.",
 	  wrap: 250
 	},
-	subject: { radius: 15 },
-	x: x(35), y: y(86.77), dy: -20, dx: 20
+	subject: { radius: 35 },
+	x: x(35), y: y(86.77), dy: -40, dx: 40
 }];
 
 var annotation2006 = [{
@@ -128,8 +132,8 @@ var annotation2006 = [{
 	  label: "With global sales (millions) at $136.16 and 22 publishers, Action game sales skyrocketed.",
 	  wrap: 250
 	},
-	subject: { radius: 15 },
-	x: x(22), y: y(136.16), dy: 20, dx: 20
+	subject: { radius: 40 },
+	x: x(22), y: y(136.16), dy: 45, dx: 45
 }];
 
 var annotation2008 = [{
@@ -139,8 +143,8 @@ var annotation2008 = [{
 	  label: "With global sales (millions) at $136.39 and 43 publishers, this genre begins its dominance for years to come.",
 	  wrap: 250
 	},
-	subject: { radius: 15 }, 
-	x: x(43), y: y(136.39), dy: 20, dx: 20
+	subject: { radius: 40 }, 
+	x: x(43), y: y(136.39), dy: 45, dx: 45
 }];
 
 var annotation2012 = [{
@@ -150,8 +154,8 @@ var annotation2012 = [{
 		label: "While all genres take a hit in this year as global sales and participating publishers decline, Shooter games continue their success.",
 		wrap: 250
 	},
-	subject: { radius: 15 }, 
-	x: x(59), y: y(122.04), dy: 20, dx: -50
+	subject: { radius: 40 }, 
+	x: x(59), y: y(122.04), dy: 45, dx: -75
 }];
 
 var annotation2013 = [{
@@ -161,8 +165,8 @@ var annotation2013 = [{
 		label: "But the next year many publishers dropped out of the Shooter genre.",
 		wrap: 250
 	},
-	subject: { radius: 15 }, 
-	x: x(30), y: y(125.22), dy: 20, dx: -50
+	subject: { radius: 40 }, 
+	x: x(30), y: y(125.22), dy: 45, dx: -75
 }];
 
 var annotation2015 = [{
@@ -172,8 +176,8 @@ var annotation2015 = [{
 	  label: "Going forward it seems that game genres are pulling back further with number of publishers and global sales, but Shooter games continue to be profitable with global sales (millions) at $70.70 and number of publishers at 47.",
 	  wrap: 250
 	},
-	subject: { radius: 15 }, 
-	x: x(47), y: y(70.70), dy: -20, dx: -50
+	subject: { radius: 30 }, 
+	x: x(47), y: y(70.70), dy: -45, dx: -75
 }];
 
 var make1980 = d3.annotation().annotations(annotation1980);
@@ -304,7 +308,6 @@ function update(data) {
 			.attr("fill", function(d, i) { 
 				return genreColor(i);
 			})
-			.attr("r", 10)
 			.on("mouseover", function(d, i) {
 				tooltip.transition()
 					.duration(200)
@@ -327,6 +330,9 @@ function update(data) {
 				})
 				.attr("cx", function(d) {
 					return x(d.pubs);
+				})
+				.attr("r", function(d) { 
+					return Math.sqrt(area(d.gl_sales) / Math.PI) 
 				});
 
 	// Add Legend
