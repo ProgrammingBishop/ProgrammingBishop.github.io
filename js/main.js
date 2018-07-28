@@ -162,7 +162,7 @@ var annotation2013 = [{
 	type: d3.annotationCalloutCircle,
 	note: {
 		title: "Publisher Dropout",
-		label: "But the next year many publishers dropped out of the Shooter genre.",
+		label: "Following a year with many publishers, this year had many publishers drop out of the Shooter genre.",
 		wrap: 250
 	},
 	subject: { radius: 40 }, 
