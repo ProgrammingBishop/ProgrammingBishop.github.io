@@ -1,1 +1,77 @@
-Hello World
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <title>Scott Bishop</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <!-- Custom styling -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row align-items-center" id="title__bar">
+                <div class="col-md-9" id="header__left">
+                    <h1>Video Game Publishers and Sales Timeline</h1>
+                </div>
+
+                <div class="col-md-3" id="header__right">
+                    <button class="title_button" id="about">About the Visualization</button>
+                </div>
+            </div>
+
+            <div class="row hidden" id="about__data">
+                <div class="col-md-10 col-md-offset-1">
+                    <h3>Interactive Slide Show Hybrid Structure Layout</h4>
+                    <p>The viewer is presented with an initial scene/slide depicting 12 game genres (represented by circles) on a graph with Number of Publishers on the x-axis and Global Sales (In Millions) on the y-axis for the year 1980. The right side of the visualization has the year present (specifies the current year/slide) as well as a legend so the user can verify which circles represent which genre for any given scene. In all there are 35 scenes in the narrative; each scene representing the Number of Publishers in relation to Global Sales for each game genre for each year between 1980 and 2015. Throughout the interface the user has 4 options: run the entire slideshow without interuption, reset the slideshow back to the first scene, step forward a scene/slide, and step back a scene/slide.</p>
+
+                    <h3>Application of Annotations</h3>
+                    <p>For each scene the circles (representing the genres) will be placed in an (x, y) coordinate that determines how many publishers were participating in that genre and what the global sales were for that genre. When the user hovers over the buttons to step forward or backward, a tooltip pops up that informs the user that they can hover over the data points for more information pertaining to that point's figures of global sales and number of publishers. I made the decision to not have that tooltip on the run and reset buttons because the user would really not find it user friendly to observe a point while the animation is executing.</p>
+
+                    <h3>Parameters and State Control</h3>
+                    <p>Between each scene the user will have a new values for each genre pertaining to number of publishers and global sales and a new value for the current year that those figures apply to. Aside from the first and last scene, the user will have the option to run, reset, step forward, or step backward in the interface. For the first scene the user will not be able to reset because the interactive slide show is already at the beginning and the user will not be able to step back because there is obviously no data prior to 1980 to display. For the last scene the user will not be able to step forward because there is no data to display beyond 2015.</p>
+                    
+                    <h3>User Events and Triggers</h3>
+                    <p>It will be the four buttons that trigger the changes for the scenes (displayed year and placement of the data points), the information displayed in the data point's annotation (to reflect the values that dictate that data point's positioning), and the parameters discussed above. By clearly laying out the buttons in a very simple interface, their purpose is pretty self-explanatory for the user. I considered adding colors to the buttons, but I decided against it because the colors of the buttons would be too distracting for the user when viewing the data, which already includes a range of 12 colors. By keeping them grey similar to the year located lower left in the plot and labeling them according to their funtion I believe that the prompt to the user of what events they produce.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row" id="game__data">
+                <div class="col-md-3">
+                    <button class="control_button" id="run">Run</button>
+                </div>
+
+                <div class="col-md-3">
+                    <button class="control_button" id="reset">Reset</button>
+                </div>
+
+                <div class="col-md-3">
+                    <button class="control_button" id="back">Step Back
+                        <span>Hover over the data points for figures on Global Sales and Number of Publishers.</span>
+                    </button>
+                </div>
+
+                <div class="col-md-3">
+                    <button class="control_button" id="forward">Step Forward
+                        <span>Hover over the data points for figures on Global Sales and Number of Publishers.</span>
+                    </button>
+                </div>
+
+                <div id="visualization"></div>
+            </div>
+        </div>
+
+        <!-- External JS libraries -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/d3.min.js"></script>
+
+        <!-- Custom JS -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
