@@ -45,9 +45,9 @@ TITLE BAR
 .control_button:hover span {
     display: block;
     z-index: 100;
-    left: 60%;
+    left: 0%;
     position: absolute;
-    top: 0rem;
+    top: 4rem;
 	text-decoration: none;
 	transition: 0.3s;
 	text-align: left;
@@ -88,6 +88,10 @@ VISUALIZATION
 	display: none;
 }
 
+.make1980 {
+	cursor: pointer;
+}
+
 
 /* 
 ==================================================
@@ -97,4 +101,8 @@ ABOUT DATA
 
 #about__data p {
 	margin: 0 0 4rem 0;
+}
+
+.annotation-note-content {
+	width: 100%;
 }
